@@ -24,7 +24,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-
 public class Selenide_Card_Delivery_Tests {
     double random = Math.random() * 28; //генерация случайного числа от 0 до 27,9999
     int rnd = (int) random + 3;  //выделение целого числа из случайного и смещение диаппазона на 3 (от 3 до 30)
@@ -54,6 +53,7 @@ public class Selenide_Card_Delivery_Tests {
         $(".notification__content").shouldHave(Condition.exactText("Встреча успешно забронирована на " + currentDate));
 
     }
+
     @Test
     public void shouldValidTestWithLitterE() {
         $("[data-test-id='city'] input").setValue("Казань");
@@ -85,6 +85,7 @@ public class Selenide_Card_Delivery_Tests {
         $(".notification__content").shouldHave(Condition.exactText("Встреча успешно забронирована на " + currentDate));
 
     }
+
     @Test
     public void shouldValidTestWithDoubleNameSeparatedBySpace() {
         $("[data-test-id='city'] input").setValue("Казань");
@@ -100,6 +101,7 @@ public class Selenide_Card_Delivery_Tests {
         $(".notification__content").shouldHave(Condition.exactText("Встреча успешно забронирована на " + currentDate));
 
     }
+
     @Test
     public void shouldTestNameWithEnglishLetters() {
         $("[data-test-id='city'] input").setValue("Москва");
@@ -114,6 +116,7 @@ public class Selenide_Card_Delivery_Tests {
         $("[data-test-id='name'].input_invalid .input__sub").shouldHave(Condition.exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."), Duration.ofSeconds(15));
 
     }
+
     @Test
     public void shouldTestNameWithHieroglyphs() {
         $("[data-test-id='city'] input").setValue("Москва");
@@ -128,6 +131,7 @@ public class Selenide_Card_Delivery_Tests {
         $("[data-test-id='name'].input_invalid .input__sub").shouldHave(Condition.exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."), Duration.ofSeconds(15));
 
     }
+
     @Test
     public void shouldTestNameWithNumbers() {
         $("[data-test-id='city'] input").setValue("Москва");
@@ -142,6 +146,7 @@ public class Selenide_Card_Delivery_Tests {
         $("[data-test-id='name'].input_invalid .input__sub").shouldHave(Condition.exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."), Duration.ofSeconds(15));
 
     }
+
     @Test
     public void shouldTestNoCity() {
         $("[data-test-id='city'] input").setValue("");
@@ -260,6 +265,7 @@ public class Selenide_Card_Delivery_Tests {
 
         $("[data-test-id='phone'].input_invalid .input__sub").shouldHave(Condition.exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."), Duration.ofSeconds(15));
     }
+
     @Test
     public void shouldTestPhoneWithMoreNumbers() {
         $("[data-test-id='city'] input").setValue("Краснодар");
