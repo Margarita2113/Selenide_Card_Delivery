@@ -1,30 +1,20 @@
 package org.example.card.delivery;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Random;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-public class Selenide_Card_Delivery_Tests {
+public class SelenideCardDeliveryTests {
     double random = Math.random() * 28; //генерация случайного числа от 0 до 27,9999
     int rnd = (int) random + 3;  //выделение целого числа из случайного и смещение диаппазона на 3 (от 3 до 30)
 
